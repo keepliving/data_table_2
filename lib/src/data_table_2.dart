@@ -968,13 +968,14 @@ class DataTable2 extends DataTable {
                             child: empty ?? const SizedBox())
                       ])
                     : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (fixedColumnAndCornerCol != null)
                             fixedColumnAndCornerCol,
                           if (fixedRowsAndCoreCol != null)
                             Flexible(
-                                fit: FlexFit.tight, child: fixedRowsAndCoreCol)
+                                fit: FlexFit.loose, child: fixedRowsAndCoreCol)
                         ],
                       ));
 
