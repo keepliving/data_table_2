@@ -556,7 +556,8 @@ class PaginatedDataTable2State extends State<PaginatedDataTable2> {
       return result;
     } // If empty placeholder is provided - don't create blank rows
 
-    final int nextPageFirstRowIndex = firstRowIndex + rowsPerPage;
+    int nextPageFirstRowIndex = firstRowIndex + rowsPerPage;
+    if (nextPageFirstRowIndex >= widget.source.rowCount) nextPageFirstRowIndex = widget.source.rowCount;
     bool haveProgressIndicator = false;
 
     for (int index = firstRowIndex; index < nextPageFirstRowIndex; index += 1) {
